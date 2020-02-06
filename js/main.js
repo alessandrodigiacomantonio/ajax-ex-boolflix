@@ -18,6 +18,8 @@ $(document).ready(function() {
       data: {
         api_key: "aa90d1c8a08bcd8ade655691dd0a97fd",
         query: input,
+        include_adult: true,
+        language: "it-IT",
       },
       success: function(response) {
         console.log(response);
