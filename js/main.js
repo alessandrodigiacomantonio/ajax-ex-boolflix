@@ -11,6 +11,7 @@ $(document).ready(function() {
   });
   $('.main__button').on('click',
   function() {
+    $('.main__content-searched').html('');
     var input = $('.main__searchbar').val();
     $.ajax({
       url:"https://api.themoviedb.org/3/search/movie",
@@ -22,14 +23,15 @@ $(document).ready(function() {
         language: "it-IT",
       },
       success: function(response) {
-        console.log(response);
         for (var numFilm = 0; numFilm < response.results.length; numFilm++) {
           var filmContext = response.results[numFilm];
           var newFilm = filmTemplate(filmContext);
           $('.main__content-searched').append(newFilm);
         };
       },
-      error: function(request, stats, errors){},
+      error: function(request, stats, errors){
+        $('.main__content-searched').append('Nessun Film Trovato');
+      },
     });
   });
 
