@@ -24,7 +24,12 @@
   </main>
   <!-- ↓ modello per generare i risultati della ricerca ↓  -->
   <script id="film_template" type="x-handlebars-template">
-    <div class="main__content-searched__film" role="listitem"></div>
+    <div class="main__content-searched__film" role="listitem">
+      <span>{{title}}</span>
+      <span>{{original_title}}</span>
+      <span>{{original_language}}</span>
+      <span>{{vote_average}}</span>
+    </div>
   </script>
   <!-- ↑ modello per generare i risultati della ricerca ↑  -->
 
