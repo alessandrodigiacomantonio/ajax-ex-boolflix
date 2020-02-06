@@ -14,7 +14,19 @@
   <link rel="stylesheet" href="css/style.css">
   <title>Boolflix</title>
 </head>
-<body>
+<body class="body">
+  <main class="main">
+    <input class="main__searchbar" type="text" placeholder="inserisci il titolo di un film">
+    <button class="main__button">Cerca</button>
+    <section class="main__content-searched" role="list">
+
+    </section>
+  </main>
+  <!-- ↓ modello per generare i risultati della ricerca ↓  -->
+  <script id="film_template" type="x-handlebars-template">
+    <div class="main__content-searched__film" role="listitem"></div>
+  </script>
+  <!-- ↑ modello per generare i risultati della ricerca ↑  -->
 
 </body>
 </html>
