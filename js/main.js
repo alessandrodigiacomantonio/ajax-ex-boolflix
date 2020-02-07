@@ -32,11 +32,17 @@ $(document).ready(function() {
           var newFilm = filmTemplate(filmContext);
           $('.main__content-searched').append(newFilm);
           var vote = (response.results[numFilm].vote_average / 2).toFixed(0);
-          if ( vote == 0 ) $('.main__content-searched__film').last().find('.vote').text('Nessun Voto');
-          else {
-            for (var stars = 0; stars < vote; stars++) {
-              $('.main__content-searched__film').last().find('.vote').append('<i class="fas fa-star"></i>');
-            }
+          // if ( vote == 0 ) $('.main__content-searched__film').last().find('.vote').text('Nessun Voto');
+          // else {
+          //   for (var stars = 0; stars < vote; stars++) {
+          //     $('.main__content-searched__film').last().find('.vote').append('<i class="fas fa-star"></i>');
+          //   }
+          for (var stars = 0; stars < vote; stars++) {
+            $('.main__content-searched__film').last().find('.vote').append('<i class="fas fa-star"></i>');
+          }
+          while (stars < 5) {
+              $('.main__content-searched__film').last().find('.vote').append('<i class="far fa-star"></i>');
+              stars++;
           }
         };
       },
