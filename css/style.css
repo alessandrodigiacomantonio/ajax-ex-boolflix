@@ -7,3 +7,11 @@
 html {
   font-size: 10px;
 }
+
+.main__content-searched__film {
+  display: flex;
+  flex-direction: column;
+}
+.flag {
+  width: 2.4rem;
+}

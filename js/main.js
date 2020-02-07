@@ -24,7 +24,15 @@ $(document).ready(function() {
       },
       success: function(response) {
         for (var numFilm = 0; numFilm < response.results.length; numFilm++) {
-          var filmContext = response.results[numFilm];
+          var filmContext = {
+            title: response.results[numFilm].title,
+            original_title: response.results[numFilm].original_title,
+            original_language: response.results[numFilm].original_language,
+            vote_average: response.results[numFilm].vote_average,
+            // function() {
+            //   var vote = reponse.results[numFilm].vote_average.toFixed(0);
+            // }
+          };
           var newFilm = filmTemplate(filmContext);
           $('.main__content-searched').append(newFilm);
         };
