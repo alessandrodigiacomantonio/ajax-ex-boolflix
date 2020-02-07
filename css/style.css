@@ -11,7 +11,11 @@ html {
 .main__content-searched__film {
   display: flex;
   flex-direction: column;
+  margin-bottom: 2rem;
 }
 .flag {
   width: 2.4rem;
+}
+.vote {
+  color: gold;
 }

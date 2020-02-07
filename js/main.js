@@ -28,13 +28,16 @@ $(document).ready(function() {
             title: response.results[numFilm].title,
             original_title: response.results[numFilm].original_title,
             original_language: response.results[numFilm].original_language,
-            vote_average: response.results[numFilm].vote_average,
-            // function() {
-            //   var vote = reponse.results[numFilm].vote_average.toFixed(0);
-            // }
           };
           var newFilm = filmTemplate(filmContext);
           $('.main__content-searched').append(newFilm);
+          var vote = (response.results[numFilm].vote_average / 2).toFixed(0);
+          if ( vote == 0 ) $('.main__content-searched__film').last().find('.vote').text('Nessun Voto');
+          else {
+            for (var stars = 0; stars < vote; stars++) {
+              $('.main__content-searched__film').last().find('.vote').append('<i class="fas fa-star"></i>');
+            }
+          }
         };
       },
       error: function(request, stats, errors){
