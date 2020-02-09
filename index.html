@@ -18,16 +18,22 @@
 </head>
 <body class="body">
   <main class="main">
-    <input class="main__searchbar" type="text" placeholder="inserisci il titolo di un film" title="Barra di ricerca dei film">
+    <input class="main__searchbar" type="text" placeholder="inserisci il titolo di un film o di una serie tv" title="Barra di ricerca dei film">
     <button class="main__button" title="Cerca film">Cerca</button>
     <section class="main__content-searched" role="list">
+      <div class="main__content-searched__film" role="list">
+        <div class="main__content-searched__film__item film-counter"></div>
+      </div>
+      <div class="main__content-searched__tv" role="list">
+        <div class="main__content-searched__tv__item tv-counter"></div>
+      </div>
     </section>
   </main>
   <!-- ↓ modello per generare i risultati della ricerca ↓  -->
   <script id="film_template" type="x-handlebars-template">
-    <div class="main__content-searched__film" role="listitem">
-      <span>{{title}}</span>
-      <span>{{original_title}}</span>
+    <div class="main__content-searched__{{list_type}}__item" role="listitem">
+      <span>Titolo - {{title}}</span>
+      <span>Titolo originale - {{original_title}}</span>
       <img class="flag" src="img/{{original_language}}.png" onerror="this.onerror=null;this.src='img/default.png';"alt="Bandiera corrispondende alla lingua originale del film">
       <span class="vote"></span>
     </div>

@@ -8,7 +8,8 @@ html {
   font-size: 10px;
 }
 
-.main__content-searched__film {
+.main__content-searched__film__item,
+.main__content-searched__tv__item {
   display: flex;
   flex-direction: column;
   margin-bottom: 2rem;
