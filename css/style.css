@@ -17,6 +17,9 @@ html {
 .flag {
   width: 2.4rem;
 }
+.poster {
+  width: 18.5rem;
+}
 .vote {
   color: gold;
 }

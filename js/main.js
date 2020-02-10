@@ -34,6 +34,7 @@ function getSearchedFilm(query) {
       $('.film-counter').text('Film trovati: '+response.total_results)
       for (var numFilm = 0; numFilm < response.results.length; numFilm++) {
         var filmContext = {
+          poster_path: "https://image.tmdb.org/t/p/w185"+response.results[numFilm].poster_path,
           title: response.results[numFilm].title,
           original_title: response.results[numFilm].original_title,
           original_language: response.results[numFilm].original_language,
@@ -71,6 +72,7 @@ function getSearchedTv(query) {
       $('.tv-counter').text('Serie TV trovate: '+response.total_results)
       for (var numTv = 0; numTv < response.results.length; numTv++) {
         var tvContext = {
+          poster_path: "https://image.tmdb.org/t/p/w185"+response.results[numTv].poster_path,
           title: response.results[numTv].name,
           original_title: response.results[numTv].original_name,
           original_language: response.results[numTv].original_language,
