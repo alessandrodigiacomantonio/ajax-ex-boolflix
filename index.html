@@ -22,20 +22,21 @@
     <button class="main__button" title="Cerca film">Cerca</button>
     <section class="main__content-searched" role="list">
       <div class="main__content-searched__film" role="list">
-        <div class="main__content-searched__film__item film-counter"></div>
+        <div class="film-counter"></div>
       </div>
       <div class="main__content-searched__tv" role="list">
-        <div class="main__content-searched__tv__item tv-counter"></div>
+        <div class="tv-counter"></div>
       </div>
     </section>
   </main>
   <!-- ↓ modello per generare i risultati della ricerca ↓  -->
   <script id="film_template" type="x-handlebars-template">
-    <div class="main__content-searched__{{list_type}}__item" role="listitem">
-      <span>Titolo - {{title}}</span>
-      <span>Titolo originale - {{original_title}}</span>
-      <img class="flag" src="img/{{original_language}}.png" onerror="this.onerror=null;this.src='img/default_flag.png';"alt="Bandiera corrispondende alla lingua originale del film">
-      <span class="vote"></span>
+    <div class="main__content-searched__{{list_type}}__item " role="listitem">
+      <span class="title dis-none">Titolo: {{title}}</span>
+      <span class="original_title dis-none">Titolo originale: {{original_title}}</span>
+      <span class="original_language dis-none">Lingua originale: <img class="flag" src="img/{{original_language}}.png" onerror="this.onerror=null;this.src='img/default_flag.png';"alt="Bandiera corrispondende alla lingua originale del film"></span>
+      <span class="vote dis-none"></span>
+      <p class="overview dis-none">Overview: {{overview}}</p>
       <img class="poster" src="{{poster_path}}" onerror="this.onerror=null;this.src='img/default_poster.png';" alt="Poster del film o serie tv trovata" />
     </div>
   </script>

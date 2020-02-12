@@ -38,6 +38,10 @@ function getSearchedFilm(query) {
           title: response.results[numFilm].title,
           original_title: response.results[numFilm].original_title,
           original_language: response.results[numFilm].original_language,
+          overview: function() {
+            if (response.results[numFilm].overview.length == 0) return 'Nessuna anteprima disponibile';
+            else return response.results[numFilm].overview;
+          },
           list_type: 'film',
         };
         var newFilm = filmTemplate(filmContext);
@@ -76,6 +80,10 @@ function getSearchedTv(query) {
           title: response.results[numTv].name,
           original_title: response.results[numTv].original_name,
           original_language: response.results[numTv].original_language,
+          overview: function() {
+            if (response.results[numTv].overview.length == 0) return 'Nessuna anteprima disponibile';
+            else return response.results[numTv].overview;
+          },
           list_type: 'tv',
         };
         var newTv = tvTemplate(tvContext);
